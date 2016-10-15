@@ -13,7 +13,7 @@ class CreateSitiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('sitio', function (Blueprint $table) {
+        Schema::create('sitios', function (Blueprint $table) {
             $table->increments('id');
             $table->String('Nombre', '200');
             $table->String('Descripcion')->nullable();
@@ -22,7 +22,7 @@ class CreateSitiosTable extends Migration
             $table->enum('Tipo', ['dependencia', 'punto de interes'])->default("punto de interes");
             $table->timestamps();
 
-            
+
         });
     }
 

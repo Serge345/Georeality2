@@ -1,5 +1,5 @@
 @extends('layouts.master')
- 
+
 
 @section('content')
 
@@ -16,30 +16,26 @@ $(document).ready(function() {
 
 {!! Form::open(['route' => 'sitio.store']) !!}
 
-<div class="input-field col s3">
-    {!! Form::label('Nombre', 'Nombre', ['class' => 'control-label']) !!}
-    {!! Form::text('Nombre', null, ['class' => 'form-control']) !!}
+<div class="input-field col s5">
+    <label for="Nombre">Nombre</label>
+    {!! Form::text('Nombre', null, ['class' => 'form-control', 'Placeholder' =>'Pepito Perez']) !!}
 </div>
 
-<div class="input-field col s3">
+<div class="input-field col s5">
     {!! Form::label('descripcion', 'Descripcion', ['class' => 'control-label']) !!}
-    {!! Form::textarea('descripcion', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('Descripcion', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="input-field col s3">
-    {!! Form::label('latitud', 'Latitud', ['class' => 'control-label', 'step' => '0']) !!}
-    {!! Form::text('latitud', null, ['class' => 'form-control']) !!}
+    {!! Form::label('Latitud', 'Latitud', ['class' => 'control-label', 'step' => '0']) !!}
+    {!! Form::text('Latitud', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="input-field col s3">
     {!! Form::label('longitud', 'Longitud', ['class' => 'control-label']) !!}
-    {!! Form::text('longitud', null, ['class' => 'form-control']) !!}
+    {!! Form::text('Longitud', null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="input-field col s3">
-  
-     {!!Form::select('tipo', array('punto de interes'=>'punto de interes','dependencia'=> 'dependencia'))!!}
-</div>
 
 {!! Form::submit('Agregar sitio', ['class' => 'btn btn-primary']) !!}
 <a href="{{ url('sitio') }}" class="btn btn-info">Cancelar</a>

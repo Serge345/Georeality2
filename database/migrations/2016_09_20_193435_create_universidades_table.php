@@ -14,7 +14,7 @@ class CreateUniversidadesTable extends Migration
     public function up()
     {
         //
-       Schema::create('universidad', function (Blueprint $table) {
+       Schema::create('universidades', function (Blueprint $table) {
             $table->increments('id');
             $table->String('Nombre', '200');
             $table->String('Direccion');

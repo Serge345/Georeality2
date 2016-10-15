@@ -9,9 +9,20 @@
 
 
 <p>
-    <a href="{{url('sitio/show')}}" class="btn btn-info">ver sitio</a>
+  @foreach($sitios as $sitio)
+
+<h3>{{ $sitio->Nombre }}</h3>
+<p>{{ $sitio->Descripcion }}</p>
+
+<p>
+    <a href="{{ route('sitio.show', $sitio->id) }}" class="btn btn-info">Ver Sitio</a>
+    <a href="{{ route('sitio.edit', $sitio->id) }}" class="btn btn-primary">Editar Sitio</a>
+</p>
+
+@endforeach
+
     <a href="{{ url('/') }}" class="btn btn-info">Volver al inicio</a>
-    
+
 </p>
 <hr>
 
