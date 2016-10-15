@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Georeality</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -12,7 +13,7 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
   <script type="text/javascript">
     $(document).ready(function() {
     $('select').material_select();
@@ -27,7 +28,7 @@
           <a class="navbar-brand bold" href="<?php echo e(url('/')); ?>">GEOREALIITY</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="<?php echo e(url('/')); ?>">Perfil</a></li>
-            
+
 
           </ul>
         </div>
@@ -41,11 +42,12 @@
       <!-- Espacio para los mensajes flash enviados entre solicitudes -->
 
 <?php if(Session::has('flash_message')): ?>
+<blockquote>
     <article class="alert alert-success">
           <?php echo e(Session::get('flash_message')); ?>
 
     </article>
-
+</blockquote>
 <?php endif; ?>
         <!-- Espacio para el contenido de la página -->
 
@@ -60,7 +62,6 @@
             <?php echo $__env->yieldContent('content'); ?>
         </article>
     </section>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-     <script type="text/javascript" src="js/materialize.min.js"></script>
+
 </body>
 </html>

@@ -25,15 +25,20 @@ $(document).ready(function() {
     {!! Form::label('descripcion', 'Descripcion', ['class' => 'control-label']) !!}
     {!! Form::textarea('Descripcion', null, ['class' => 'form-control']) !!}
 </div>
+<div class="row">
+    <div class="input-field col s3">
+        {!! Form::label('Latitud', 'Latitud', ['class' => 'control-label', 'step' => '0']) !!}
+        {!! Form::text('Latitud', null, ['class' => 'form-control']) !!}
+    </div>
 
-<div class="input-field col s3">
-    {!! Form::label('Latitud', 'Latitud', ['class' => 'control-label', 'step' => '0']) !!}
-    {!! Form::text('Latitud', null, ['class' => 'form-control']) !!}
+    <div class="input-field col s3">
+        {!! Form::label('longitud', 'Longitud', ['class' => 'control-label']) !!}
+        {!! Form::text('Longitud', null, ['class' => 'form-control']) !!}
+    </div>
 </div>
-
-<div class="input-field col s3">
-    {!! Form::label('longitud', 'Longitud', ['class' => 'control-label']) !!}
-    {!! Form::text('Longitud', null, ['class' => 'form-control']) !!}
+<div class="input field col s3">
+  {!! Form::label('Tipo', 'Tipo', ['for' => 'Tipo']) !!}
+  {!! Form::select('Tipo', array('punto de interes' => 'Punto de interes', 'dependencia' => 'Dependencia')) !!}
 </div>
 
 

@@ -17,3 +17,4 @@ Route::get('/', 'sitioController@inicio');
 Route::resource('sitio', 'sitioController');
 Route::resource('usuario', 'usuarioController');
 Route::resource('universidad', 'universidadController');
+Route::resource('campus', 'campusController');

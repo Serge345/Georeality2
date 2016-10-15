@@ -32,7 +32,7 @@
     'method' => 'DELETE',
     'route' => ['sitio.destroy', $sitio->id]
 ]) !!}
-    {!! Form::submit('¿Borrar sitio?', ['class' => 'waves-effect waves-light btn red darken-4']) !!}
+    {!! Form::submit('Borrar sitio', ['class' => 'btn red darken-4']) !!}
 {!! Form::close() !!}
 
 

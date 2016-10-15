@@ -29,18 +29,25 @@ $(document).ready(function() {
     <?php echo Form::textarea('Descripcion', null, ['class' => 'form-control']); ?>
 
 </div>
+<div class="row">
+    <div class="input-field col s3">
+        <?php echo Form::label('Latitud', 'Latitud', ['class' => 'control-label', 'step' => '0']); ?>
 
-<div class="input-field col s3">
-    <?php echo Form::label('Latitud', 'Latitud', ['class' => 'control-label', 'step' => '0']); ?>
+        <?php echo Form::text('Latitud', null, ['class' => 'form-control']); ?>
 
-    <?php echo Form::text('Latitud', null, ['class' => 'form-control']); ?>
+    </div>
 
+    <div class="input-field col s3">
+        <?php echo Form::label('longitud', 'Longitud', ['class' => 'control-label']); ?>
+
+        <?php echo Form::text('Longitud', null, ['class' => 'form-control']); ?>
+
+    </div>
 </div>
+<div class="input field col s3">
+  <?php echo Form::label('Tipo', 'Tipo', ['for' => 'Tipo']); ?>
 
-<div class="input-field col s3">
-    <?php echo Form::label('longitud', 'Longitud', ['class' => 'control-label']); ?>
-
-    <?php echo Form::text('Longitud', null, ['class' => 'form-control']); ?>
+  <?php echo Form::select('Tipo', array('punto de interes' => 'Punto de interes', 'dependencia' => 'Dependencia')); ?>
 
 </div>
 

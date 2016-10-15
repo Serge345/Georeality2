@@ -33,7 +33,7 @@
     'route' => ['sitio.destroy', $sitio->id]
 ]); ?>
 
-    <?php echo Form::submit('¿Borrar sitio?', ['class' => 'waves-effect waves-light btn red darken-4']); ?>
+    <?php echo Form::submit('Borrar sitio', ['class' => 'btn red darken-4']); ?>
 
 <?php echo Form::close(); ?>
 

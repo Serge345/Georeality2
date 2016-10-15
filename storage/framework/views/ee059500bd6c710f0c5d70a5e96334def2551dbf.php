@@ -8,6 +8,7 @@
 <a href="<?php echo e(url('sitio')); ?>" class="btn btn-info">Sitios</a>
 <a href="<?php echo e(url('usuario')); ?>" class="btn btn-primary"> Usuarios</a>
 <a href="<?php echo e(url('universidad')); ?>" class="btn btn-info">Universidades</a>
+<a href="<?php echo e(url('campus')); ?>" class="btn btn-info">Campus</a>
 
 
 <?php $__env->stopSection(); ?>

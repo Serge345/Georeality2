@@ -13,10 +13,10 @@ class CreateCampusTable extends Migration
      */
     public function up()
     {
-        Schema::create('campus', function (Blueprint $table) {
+        Schema::create('campuses', function (Blueprint $table) {
             $table->increments('id');
-            $table->String('Nombre', '200');
-            $table->String('Direccion');
+            $table->String('Nombre', '150');
+            $table->String('Direccion', '100');
             $table->timestamps();
         });
     }
