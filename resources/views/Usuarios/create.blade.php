@@ -1,5 +1,5 @@
 @extends('layouts.master')
- 
+
 
 @section('content')
 
@@ -11,17 +11,21 @@
 
 <div class="input-field col s3">
     {!! Form::label('Nombre', 'Nombre', ['class' => 'control-label']) !!}
-    {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+    {!! Form::text('Nombre', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="input-field col s3">
     {!! Form::label('Email', 'Email', ['class' => 'control-label']) !!}
-    {!! Form::email('email', null, ['class' => 'form-control']) !!}
+    {!! Form::email('Email', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="input-field col s3">
     {!! Form::label('Password', 'Password', ['class' => 'control-label', 'step' => '0']) !!}
     {!! Form::password('Password', null, ['class' => 'form-control']) !!}
+</div>
+<div class="input field col s3">
+  {!! Form::label('Privilegios', 'Privilegios', ['for' => 'Tipo']) !!}
+  {!! Form::select('Tipo', array('usuario' => 'Usuario', 'administrador' => 'Administrador')) !!}
 </div>
 
 

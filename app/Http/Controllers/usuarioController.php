@@ -3,44 +3,121 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
 use App\Http\Requests;
-
+use Illuminate\Support\Facades\Session;
 class usuarioController extends Controller
 {
     //
-  
-    public function create(Request $request){
 
+
+    public function perfil(Request $request){
+      return view('Usuarios.perfil');
+    }
+
+    public function create(Request $request){
       return view('Usuarios.create');
     }
 
-    public function edit(Request $request){
+    public function store(Request $request)
+    {
+      $this->validate($request, [
+            'Nombre'      => 'required | string | max:40',
+            'Email'       => 'required | email',
+            'Password'    => 'required | string |min:6| max:30',
+            'Tipo'  => 'required | string |in:administrador,usuario'
+        ]);
+        $input = $request->all();
 
-      return view('Usuarios.edit');
+        User::create($input);
+        Session::flash('flash_message', 'El usuario nuevo se ha creado con exito!');
+        return redirect('/usuario');
     }
 
-    public function update(Request $request){
+    public function index(Request $request)
+{
+    $usuarios = User::all();
 
-      return view('Sitios.inicio');
+    return view('Usuarios.index', ['usuarios' => $usuarios]);
+}
+
+public function edit(Request $request, $id)
+{
+  try
+  {
+    $usuario = User::findOrFail($id);
+
+    return view('Usuarios.edit')->withUsuario($usuario);
+  }
+  catch(ModelNotFoundException $e)
+  {
+    Session::flash('flash_message', "el usuario $id no ha sido encontrado!");
+
+    return redirect()->back();
+  }
+}
+
+public function update(Request $request, $id)
+    {
+      try
+      {
+        $usuario = User::findOrFail($id);
+
+        $this->validate($request, [
+              'Nombre'      => 'required | string  | max:40',
+              'Email'       => 'required | email',
+              'Password'    => 'required | string |min:6 | max:30',
+              'Tipo'  => 'required | string |in:administrador,usuario'
+          ]);
+        $input = $request->all();
+
+        $usuario->fill($input)->save();
+
+        Session::flash('flash_message', 'El perfil del usuario ha sido actualizado');
+
+        return redirect('/usuario');
+      }
+      catch(ModelNotFoundException $e)
+      {
+        Session::flash('flash_message', "El usuario $id no ha sido encontrado!");
+
+        return redirect()->back();
+      }
     }
 
-    public function show(Request $request){
+    public function show(Request $request, $id)
+{
+  try{
+    $usuario = User::findOrFail($id);
 
-    return view('Usuarios.show');
-    }
+    return view('Usuarios.show')->withUsuario($usuario);
+  }
+  catch(ModelNotFoundException $e)
+  {
+    Session::flash('flash_message', "El usuario $id no ha sido encontrado!");
 
-    public function store(Request $request){
-      return view('Sitios.inicio');
-    }
+    return redirect()->back();
+  }
+}
 
-    public function index(Request $request){
 
-      return view('Usuarios.index');
-    }
+public function destroy(Request $request, $id)
+{
+  try
+  {
+    $usuario = User::findOrFail($id);
 
-    public function delete(Request $request){
+    $usuario->delete();
 
-    	return view('Usuarios.index');
-    }
+    Session::flash('flash_message', 'El usuario se ha eliminado');
+
+    return redirect()->route('usuario.index');
+  }
+  catch(ModelNotFoundException $e)
+  {
+    Session::flash('flash_message', "El usuario $id no ha sido encontrado!");
+
+    return redirect()->back();
+  }
+}
 }

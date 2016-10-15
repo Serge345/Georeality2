@@ -3,11 +3,16 @@
 
 <?php $__env->startSection('content'); ?>
 
-<h2>Crear nuevo usuario</h2>
+<h2>Editar usuario</h2>
 <p class="lead"></p>
 <hr>
 
-<?php echo Form::open(['route' => 'usuario.store']); ?>
+<?php echo Form::model($usuario, [
+    'method' => 'PUT',
+    'route' => ['usuario.update', $usuario->id]
+]); ?>
+
+
 
 
 <div class="input-field col s3">
@@ -38,9 +43,10 @@
 </div>
 
 
-<?php echo Form::submit('Crear usuario', ['class' => 'btn btn-primary']); ?>
 
-<a href="<?php echo e(url('usuario')); ?>" class="btn btn-info">Cancelar</a>
+<?php echo Form::submit('Actualizar Usuario', ['class' => 'btn btn-primary']); ?>
+
+<a href="<?php echo e(url('/usuario')); ?>" class="btn btn-info">Cancelar</a>
 <?php echo Form::close(); ?>
 
 

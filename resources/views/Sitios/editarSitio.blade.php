@@ -32,6 +32,11 @@
     {!! Form::text('Longitud', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="input field col s3">
+  {!! Form::label('Tipo', 'Tipo', ['for' => 'Tipo']) !!}
+  {!! Form::select('Tipo', array('punto de interes' => 'Punto de interes', 'dependencia' => 'Dependencia')) !!}
+</div>
+
 {!! Form::submit('Actualizar sitio', ['class' => 'btn btn-primary']) !!}
 <a href="{{ url('/') }}" class="btn btn-info">Cancelar</a>
 {!! Form::close() !!}

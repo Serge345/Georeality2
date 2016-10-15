@@ -3,13 +3,6 @@
 
 @section('content')
 
-<script type="text/javascript">
-
-$(document).ready(function() {
-    $('select').material_select();
-});
-
-</script>
 <h2>Agregar un nuevo sitio</h2>
 <p class="lead"></p>
 <hr>

@@ -41,6 +41,13 @@
 
 </div>
 
+<div class="input field col s3">
+  <?php echo Form::label('Tipo', 'Tipo', ['for' => 'Tipo']); ?>
+
+  <?php echo Form::select('Tipo', array('punto de interes' => 'Punto de interes', 'dependencia' => 'Dependencia')); ?>
+
+</div>
+
 <?php echo Form::submit('Actualizar sitio', ['class' => 'btn btn-primary']); ?>
 
 <a href="<?php echo e(url('/')); ?>" class="btn btn-info">Cancelar</a>

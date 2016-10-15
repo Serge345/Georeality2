@@ -6,10 +6,19 @@
 <p class="lead">Lista de usuarios. <a href="<?php echo e(url('usuario/create')); ?>">crear uno nuevo</a></p>
 <hr>
 
+<p>
+  <?php $__currentLoopData = $usuarios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $usuario): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
 
+<h3><?php echo e($usuario->Nombre); ?></h3>
+<p><?php echo e($usuario->Email); ?></p>
 
 <p>
-    <a href="<?php echo e(url('usuario/show')); ?>" class="btn btn-info">ver usuario</a>
+    <a href="<?php echo e(route('usuario.show', $usuario->id)); ?>" class="btn btn-info">Ver usuario</a>
+    <a href="<?php echo e(route('usuario.edit', $usuario->id)); ?>" class="btn btn-primary">Editar usuario</a>
+</p>
+
+<?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
+
     <a href="<?php echo e(url('/')); ?>" class="btn btn-info">Volver al inicio</a>
 </p>
 <hr>
